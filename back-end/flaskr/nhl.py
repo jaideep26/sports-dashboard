@@ -1,13 +1,14 @@
 from flask import (Blueprint, jsonify)
 import requests
+import logging
 
 bp = Blueprint('nhl', __name__, url_prefix='/nhl')
-
 nhl_api_url = "https://api-web.nhle.com/v1"
 
 @bp.route('/schedule', methods=['GET'])
 def get_schedule():
     try:
+        logging.info('Sending request to external NHL API')
         fetched_schedule_response = requests.get(f"{nhl_api_url}/schedule/now")
 
         if fetched_schedule_response.status_code == 200:
