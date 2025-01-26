@@ -5,25 +5,61 @@ import logging
 bp = Blueprint('nhl', __name__, url_prefix='/nhl')
 nhl_api_url = "https://api-web.nhle.com/v1"
 
+# Routes
 @bp.route('/schedule', methods=['GET'])
 def get_schedule():
     try:
-        logging.info('Sending request to external NHL API')
-        fetched_schedule_response = requests.get(f"{nhl_api_url}/schedule/now")
+        response = {}
+        errors = []
 
-        if fetched_schedule_response.status_code == 200:
-            response = fetched_schedule_response.json()
-            game_week = get_game_week(response)
-            #TODO - create a custom response
-            data = {
-                "gameWeek": game_week
-            }
-            return jsonify({"success": True, "data": data})
+        logging.info('Fetching schedule from external NHL API')
+        fetched_schedule = requests.get(f"{nhl_api_url}/schedule/now")
+
+        if fetched_schedule.status_code == 200:
+            schedule = fetched_schedule.json()
+            response["gameWeek"] = get_game_week(schedule)
         else:
-            return jsonify({"success": False, "error": f"Request failed with status code {response.status_code}"})
+            errors.append(f"Request failed with status code {fetched_schedule.status_code}")
     except requests.exceptions.RequestException as e:
-        return jsonify({"success": False, "error": str(e)})
+        errors.append(str(e))
+    
+    return jsonify({
+        "data": response,
+        "errors": errors
+    })
 
+@bp.route('/game/<int:game_id>', methods=['GET'])
+def get_game(game_id):
+    try:
+        response = {}
+        errors = []
+
+        logging.info('Fetching landing information from external NHL API')
+        fetched_landing = requests.get(f"{nhl_api_url}/gamecenter/{game_id}/landing")
+
+        logging.info('Fetching boxscore from external NHL API')
+        fetched_boxscore = requests.get(f"{nhl_api_url}/gamecenter/{game_id}/boxscore")
+
+        if fetched_landing.status_code == 200:
+            landing = fetched_landing.json()
+            response["landing"] = get_landing(landing)    
+        else:
+            errors.append(f"Failed to fetch landing details with status code {fetched_landing.status_code}")
+
+        if fetched_boxscore.status_code == 200:
+            boxscore = fetched_boxscore.json()
+            response["boxscore"] = get_boxscore(boxscore)
+        else:
+            errors.append(f"Failed to fetch boxscore details with status code {fetched_boxscore.status_code}")
+    except requests.exceptions.RequestException as e:
+        errors.append(str(e))
+
+    return jsonify({
+        "data": response,
+        "errors": errors
+    })
+
+# Helper functions
 def get_game_week(response):
     fetched_game_week = response.get("gameWeek")
     game_days = []
@@ -66,3 +102,10 @@ def get_team_details(team):
         "placeName": team.get("placeName").get("default"),
         "score": team.get("score"),
     }
+
+#TODO: Implement these functions
+def get_landing(landing):
+    return landing
+
+def get_boxscore(boxscore):
+    return boxscore
