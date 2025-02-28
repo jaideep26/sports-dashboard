@@ -12,7 +12,6 @@ export const GameStatus = ({
   timeRemaining,
   periodDescriptor,
 }: GameStatusProps) => {
-  console.log("gameState", gameState);
   return (
     <>
       {gameState === "PRE" ? <Typography>Pre-Game</Typography> : undefined}

@@ -9,7 +9,6 @@ export interface GameDetailViewProps {
 }
 
 export const GameDetailView = ({ gameData }: GameDetailViewProps) => {
-  console.log("gameData", gameData);
   return (
     <Box display={"flex"} justifyContent={"center"}>
       <TeamDetailsForGame

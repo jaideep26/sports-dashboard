@@ -15,6 +15,7 @@ const GameCard = ({ game }: GameCardProps) => {
       <Card
         sx={{
           cursor: "pointer",
+          boxShadow: 3
         }}
       >
         <CardContent>

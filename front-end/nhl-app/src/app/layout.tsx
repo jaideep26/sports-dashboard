@@ -24,7 +24,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
                 <Button
                   variant="text"
                   color="primary"
-                  startIcon={<SportsHockeyIcon />}
+                  startIcon={<SportsHockeyIcon fontSize="large"/>}
                 >
                   NHL Dashboard
                 </Button>
