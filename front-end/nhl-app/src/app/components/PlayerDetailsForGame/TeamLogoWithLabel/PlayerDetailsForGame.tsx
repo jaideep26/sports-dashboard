@@ -1,3 +1,4 @@
+import { PlayerStatsDetails } from "@/app/models/GameDetail";
 import {
   Paper,
   Table,
@@ -7,7 +8,6 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { PlayerStatsDetails } from "../models/GameDetail";
 
 interface PlayerDetailsForGameProps {
   players: PlayerStatsDetails[];

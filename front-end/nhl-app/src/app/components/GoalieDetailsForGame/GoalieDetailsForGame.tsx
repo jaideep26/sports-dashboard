@@ -1,3 +1,4 @@
+import { GoalieStatsDetails } from "@/app/models/GameDetail";
 import {
   Paper,
   Table,
@@ -7,7 +8,6 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { GoalieStatsDetails } from "../models/GameDetail";
 
 interface PlayerDetailsForGameProps {
   goalies: GoalieStatsDetails[];
