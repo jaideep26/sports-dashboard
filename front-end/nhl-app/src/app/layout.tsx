@@ -6,7 +6,7 @@ import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { ThemeProvider } from "@mui/material/styles";
 import Link from "next/link";
 import * as React from "react";
-import ModeSwitch from "./components/ModeSwitch";
+import ModeSwitch from "./components/ModeSwitch/ModeSwitch";
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -24,7 +24,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
                 <Button
                   variant="text"
                   color="primary"
-                  startIcon={<SportsHockeyIcon fontSize="large"/>}
+                  startIcon={<SportsHockeyIcon fontSize="large" />}
                 >
                   NHL Dashboard
                 </Button>

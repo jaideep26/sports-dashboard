@@ -1,8 +1,8 @@
 "use client";
+import { GameDetail } from "@/app/models/GameDetail";
 import { Box, Typography } from "@mui/material";
-import { GameDetail } from "../models/GameDetail";
-import { GameStatus } from "./GameStatus";
-import { TeamDetailsForGame } from "./TeamDetailsForGame";
+import { GameStatus } from "../GameStatus/GameStatus";
+import { TeamDetailsForGame } from "../TeamDetailsForGame/TeamDetailsForGame";
 
 export interface GameDetailViewProps {
   gameData: GameDetail;

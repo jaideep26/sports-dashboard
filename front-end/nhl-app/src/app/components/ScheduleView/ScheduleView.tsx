@@ -8,7 +8,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import GameCard from "./GameCard";
+import GameCard from "../GameCard/GameCard";
 
 export interface ScheduleViewProps {
   schedule: Schedule;

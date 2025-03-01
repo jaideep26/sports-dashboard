@@ -1,5 +1,5 @@
 import { fetchGameData } from "@/app/actions/fetchGameData";
-import { GameDetailView } from "@/app/components/GameDetailView";
+import { GameDetailView } from "@/app/components/GameDetailView/GameDetailView";
 
 interface GamePageProps {
   params: { id: string };

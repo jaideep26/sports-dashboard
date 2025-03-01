@@ -1,9 +1,9 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import { PlayerTeamStats, TeamStats } from "../models/GameDetail";
-import { GoalieDetailsForGame } from "./GoalieDetailsForGame";
-import { PlayerDetailsForGame } from "./PlayerDetailsForGame";
-import { TeamLogoWithLabel } from "./TeamLogoWithLabel";
+import { PlayerTeamStats, TeamStats } from "../../models/GameDetail";
+import { GoalieDetailsForGame } from "../GoalieDetailsForGame/GoalieDetailsForGame";
+import { PlayerDetailsForGame } from "../PlayerDetailsForGame/TeamLogoWithLabel/PlayerDetailsForGame";
+import { TeamLogoWithLabel } from "../TeamLogoWithLabel/TeamLogoWithLabel";
 
 export interface TeamDetailsForGameProps {
   teamData: TeamStats;

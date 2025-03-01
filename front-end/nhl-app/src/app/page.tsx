@@ -1,5 +1,5 @@
 import { fetchNhlSchedule } from "./actions/fetchNhlSchedule";
-import { ScheduleView } from "./components/ScheduleView";
+import { ScheduleView } from "./components/ScheduleView/ScheduleView";
 
 export default async function Page() {
   const schedule = await fetchNhlSchedule();

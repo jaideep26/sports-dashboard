@@ -1,5 +1,5 @@
+import { PeriodDescriptor } from "@/app/models/GameDetail";
 import { Box, Typography } from "@mui/material";
-import { PeriodDescriptor } from "../models/GameDetail";
 
 interface GameStatusProps {
   gameState: string;

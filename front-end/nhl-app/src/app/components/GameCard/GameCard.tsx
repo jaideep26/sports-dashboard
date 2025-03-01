@@ -2,9 +2,9 @@
 import { Game } from "@/app/models/Schedule";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import Link from "next/link";
-import { GameStatus } from "./GameStatus";
-import { LocalizedTime } from "./LocalizedTime";
-import { TeamLogoWithLabel } from "./TeamLogoWithLabel";
+import { GameStatus } from "../GameStatus/GameStatus";
+import { LocalizedTime } from "../LocalizedTime/LocalizedTime";
+import { TeamLogoWithLabel } from "../TeamLogoWithLabel/TeamLogoWithLabel";
 
 export type GameCardProps = {
   game: Game;
@@ -15,7 +15,7 @@ const GameCard = ({ game }: GameCardProps) => {
       <Card
         sx={{
           cursor: "pointer",
-          boxShadow: 3
+          boxShadow: 3,
         }}
       >
         <CardContent>
