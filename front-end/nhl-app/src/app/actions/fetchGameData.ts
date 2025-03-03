@@ -24,7 +24,7 @@ export const fetchGameData = async (
     const data: GameDetail = await res.json();
     return data;
   } catch (error) {
-    console.error("Error fetching NHL schedule data", error);
+    console.error("Error fetching NHL game data", error);
     return undefined;
   }
 };
