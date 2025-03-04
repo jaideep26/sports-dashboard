@@ -1,3 +1,5 @@
+//TODO - design model for schedule based on API response
+
 export interface Schedule {
   nextStartDate: string;
   previousStartDate: string;

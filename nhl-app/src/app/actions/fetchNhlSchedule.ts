@@ -1,6 +1,7 @@
 "use server";
 import { Schedule } from "@/app/models/Schedule";
 
+//TODO - replace with internal API call
 export const fetchNhlSchedule = async (): Promise<Schedule | undefined> => {
   try {
     const res = await fetch("https://api-web.nhle.com/v1/schedule/now", {

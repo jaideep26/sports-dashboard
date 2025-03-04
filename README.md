@@ -1,4 +1,4 @@
 # sports-dashboard
 
 Useful Links/Resources:
-- [Project Board](https://github.com/users/jaideep26/projects/1)
+- [Project Board](https://trello.com/b/GARk6EYK/sports-dashboard)
