@@ -26,8 +26,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-      working-directory: ./front-end/nhl-app
+      working-directory: ./nhl-app
     - run: npm run build --if-present
-      working-directory: ./front-end/nhl-app
+      working-directory: ./nhl-app
     # - run: npm test
-    #   working-directory: ./front-end/nhl-app
+    #   working-directory: ./nhl-app
