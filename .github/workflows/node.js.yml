@@ -32,5 +32,5 @@ jobs:
       run: npm run build --if-present
       working-directory: ./nhl-app
     - name: Test
-      run: npm test
+      run: npm run cy:test
       working-directory: ./nhl-app
