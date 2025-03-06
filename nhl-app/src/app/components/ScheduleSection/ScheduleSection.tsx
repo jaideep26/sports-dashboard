@@ -6,7 +6,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Paper, ToggleButtonGroup } from "@mui/material";
 import { useState } from "react";
 import { DailyScheduleBox } from "./DailyScheduleBox/DailyScheduleBox";
-import { GameCard } from "./GameCard/GameList";
+import { GameCard } from "./GameCard/GameCard";
 
 export type ScheduleSectionProps = {
   schedule: Schedule;
@@ -36,13 +36,10 @@ export const ScheduleSection = ({ schedule }: ScheduleSectionProps) => {
         </Button>
 
         <ToggleButtonGroup
+          id="schedule-dates-group"
           value={selectedDate}
           exclusive
-          onChange={(event, newDate) => {
-            // if (newDate) {
-            setSelectedDate(newDate);
-            // }
-          }}
+          onChange={(event, newDate) => setSelectedDate(newDate)}
           sx={{ width: "100%" }}
         >
           {schedule.gameWeek.map((gameDay) => (
@@ -63,6 +60,7 @@ export const ScheduleSection = ({ schedule }: ScheduleSectionProps) => {
         </Button>
       </Paper>
       <Box
+        id="game-cards-list"
         sx={{
           display: "flex",
           flexDirection: "row",
