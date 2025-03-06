@@ -23,15 +23,15 @@ export const ScheduleSection = ({ schedule }: ScheduleSectionProps) => {
       <Box
         sx={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}
       >
-        {schedule.gameWeek.map((gameWeekItem) => (
-          //TODO - implement game week item as a separate component
+        {schedule.gameWeek.map((gameDay) => (
+          //TODO - implement game day item as a separate component
           <Box
-            key={gameWeekItem.date}
+            key={gameDay.date}
             sx={{ display: "flex", flexDirection: "column" }}
           >
-            <Typography variant="subtitle1">{gameWeekItem.date}</Typography>
+            <Typography variant="subtitle1">{gameDay.date}</Typography>
             <Typography variant="subtitle2">
-              {gameWeekItem.numberOfGames} games
+              {gameDay.numberOfGames} games
             </Typography>
           </Box>
         ))}
